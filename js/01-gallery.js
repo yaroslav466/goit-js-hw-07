@@ -45,10 +45,26 @@ const handleListClick = (e) => {
             />
         </li>
      </div>
-`);
+`)
+instance.show()
 
-instance.show(); 
-};
+const handlerEsc = (e) => {
+     
+        if (e.code === "Escape") {
+            instance.close();
+            listEl.removeEventListener("keydown", handlerEsc);
+        }
+        
+    };
+
+    listEl.addEventListener("keydown", handlerEsc);
+  
+    const containerModal = document.querySelector(".modal");
+    containerModal.style.width = `90%`;   
+    
+
+}
+
 
 
 
